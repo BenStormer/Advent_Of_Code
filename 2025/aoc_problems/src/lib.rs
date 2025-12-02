@@ -1,4 +1,5 @@
 use std::fs::File;
+use std::fs::read_to_string;
 use std::io::{self, BufRead};
 use std::path::Path;
 
@@ -9,4 +10,11 @@ where
 {
     let file = File::open(filename)?;
     Ok(io::BufReader::new(file).lines())
+}
+
+pub fn read_file<P>(filename: P) -> io::Result<String>
+where
+    P: AsRef<Path>,
+{
+    return read_to_string(filename);
 }
