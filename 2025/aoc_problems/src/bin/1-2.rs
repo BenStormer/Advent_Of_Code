@@ -3,7 +3,7 @@ use aoc_problems::read_lines;
 fn main() {
     let mut count = 0;
     let mut curr = 50;
-    if let Ok(lines) = read_lines("../inputs/1.txt") {
+    if let Ok(lines) = read_lines("./inputs/1.txt") {
         for line in lines.map_while(Result::ok) {
             if let Some(turn_value) = get_turn_value(&line) {
                 println!(
