@@ -4,7 +4,7 @@ use std::collections::BTreeSet;
 
 /*
  * Algorithm:
- * 1. Read in ID ranges as a BTreeSet Map<(start, end),...>
+ * 1. Read in ID ranges as a BTree Set<(start, end),...>
  *    - B-Tree Set should allow us to keep it in sorted order
  * 2. For each ID, look through B-Tree in reverse order and get the first
  *    entry where ID >= start
