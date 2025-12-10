@@ -11,7 +11,7 @@ use aoc_problems::read_lines;
 type Coordinate = (i32, i32);
 
 fn main() {
-    let mut coordinates: Vec<(i32, i32)> = Vec::new();
+    let mut coordinates: Vec<Coordinate> = Vec::new();
     if let Ok(lines) = read_lines("./inputs/9.txt") {
         for line in lines.map_while(Result::ok) {
             let coordinate_vector: Vec<i32> = line
