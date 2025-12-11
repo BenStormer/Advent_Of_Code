@@ -40,15 +40,14 @@ fn explore_paths(
     if input == "out" {
         return 1;
     }
-    // Check memo if we have already explored all paths
+
+    // Check memo if we have already explored all paths for this input
     if explored_paths.contains_key(&input) {
         return *explored_paths.get(&input).expect("Invalid value");
     }
 
-    // Temporary add until we get the actual value
-    explored_paths.insert(input.to_string(), 0);
-
-    let empty_vector: &Vec<String> = &Vec::new();
+    // Sum path_counts from recursive DFS traversal
+    let empty_vector: &Vec<String> = &Vec::new(); // Avoid borrowing error
     let paths_to_explore = devices.get(&input).unwrap_or(empty_vector);
     let path_count = paths_to_explore
         .iter()
